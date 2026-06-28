@@ -1,0 +1,90 @@
+-- Create Database
+CREATE DATABASE ecommerce_app;
+USE ecommerce_app;
+
+-- =========================
+-- ALTER TABLE (if exists)
+-- =========================
+ALTER TABLE product 
+MODIFY image_url VARCHAR(1000);
+
+-- =========================
+-- INSERT CATEGORIES
+-- =========================
+INSERT INTO category (category_id, name) VALUES
+(1, 'Electronics'),
+(2, 'Sports'),
+(3, 'Health'),
+(4, 'Fashion');
+
+-- =========================
+-- INSERT PRODUCTS
+-- =========================
+INSERT INTO product 
+(product_id, name, description, price, stock_quantity, image_url, category_id)
+VALUES
+
+-- Electronics
+(1, 'Smart LED TV', '50 inch 4K Ultra HD Smart TV', 55000, 20,
+'https://www.shutterstock.com/shutterstock/photos/2507937705/display_1500/stock-photo-jakarta-indonesia-august-th-a-new-television-lg-nano-tsa-specifications-inch-k-2507937705.jpg', 1),
+
+(2, 'Bluetooth Speaker', 'Portable wireless speaker with deep bass', 4500, 35,
+'https://www.shutterstock.com/image-photo/portable-wireless-speaker-isolated-on-600w-1700452255.jpg', 1),
+
+(3, 'Laptop', 'Intel i5 laptop with 8GB RAM', 65000, 12,
+'https://www.shutterstock.com/image-photo/laptop-on-light-gray-surface-600w-2627306483.jpg', 1),
+
+(4, 'Smart Watch', 'Fitness tracking smartwatch', 7000, 40,
+'https://www.shutterstock.com/shutterstock/photos/2683819511/display_1500/stock-photo-close-up-of-google-pixel-watch-smartwatch-with-fitness-tracking-display-toronto-canada-2683819511.jpg', 1),
+
+-- Sports
+(5, 'Cricket Bat', 'Wooden professional cricket bat', 3500, 25,
+'https://www.shutterstock.com/shutterstock/photos/2785496991/display_1500/stock-photo-meerut-uttar-pradesh-india-april-a-buyer-holding-and-examining-a-cricket-bat-inside-a-2785496991.jpg', 2),
+
+(6, 'Football', 'Standard size football', 1200, 60,
+'https://www.shutterstock.com/shutterstock/photos/2736479643/display_1500/stock-photo-cairo-egypt-february-a-mikasa-size-soccer-ball-size-a-standard-sized-ball-suitable-2736479643.jpg', 2),
+
+(7, 'Badminton Racket', 'Lightweight carbon fiber racket', 1500, 30,
+'https://www.shutterstock.com/image-photo/kuala-lumpur-malaysia-december-2024-600w-2593461395.jpg', 2),
+
+(8, 'Gym Dumbbells', 'Set of adjustable dumbbells', 5000, 15,
+'https://www.shutterstock.com/image-photo/adjustable-weight-dumbbells-plastic-polymer-600w-1428187880.jpg', 2),
+
+-- Health
+(9, 'Protein Powder', 'Whey protein supplement', 2500, 50,
+'https://www.shutterstock.com/image-photo/protein-drink-pouring-shake-glass-600w-2737688669.jpg', 3),
+
+(10, 'Yoga Mat', 'Non-slip yoga mat', 800, 70,
+'https://www.shutterstock.com/image-photo/non-slip-yoga-mat-frosted-600w-2675818397.jpg', 3),
+
+(11, 'Vitamin Tablets', 'Multivitamin health supplement', 600, 100,
+'https://www.shutterstock.com/image-photo/close-multivitamin-supplement-bottles-displayed-600w-2683819019.jpg', 3),
+
+(12, 'Digital Weighing Scale', 'Accurate body weight machine', 1500, 45,
+'https://www.shutterstock.com/image-photo/blue-analog-weight-machine-on-600w-2646728895.jpg', 3),
+
+-- Fashion
+(13, 'Men''s T-Shirt', 'Cotton casual t-shirt', 600, 80,
+'https://www.shutterstock.com/shutterstock/photos/2693476249/display_1500/stock-photo-young-man-wearing-blank-blue-t-shirt-near-grey-wall-mockup-for-design-2693476249.jpg', 4),
+
+(14, 'Women''s Dress', 'Stylish party wear dress', 2500, 30,
+'https://www.shutterstock.com/shutterstock/photos/2752762521/display_1500/stock-photo-rack-with-beautiful-festive-clothes-in-dressing-room-closeup-2752762521.jpg', 4),
+
+(15, 'Running Shoes', 'Comfortable sports shoes', 3200, 50,
+'https://www.shutterstock.com/shutterstock/photos/2686705141/display_1500/stock-photo-blue-running-shoes-with-athletic-design-lightweight-and-comfortable-sports-footwear-isolated-on-2686705141.jpg', 4),
+
+(16, 'Leather Jacket', 'Premium quality leather jacket', 4500, 20,
+'https://www.shutterstock.com/shutterstock/photos/1917095081/display_1500/stock-photo-attractive-man-wearing-classy-leather-jacket-1917095081.jpg', 4);
+
+-- =========================
+-- TEST QUERIES
+-- =========================
+SHOW TABLES;
+
+SELECT * FROM category;
+SELECT * FROM product;
+SELECT * FROM orders;
+SELECT * FROM order_item;
+SELECT * FROM cart;
+SELECT * FROM payment;
+SELECT * FROM user;
